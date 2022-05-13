@@ -1,4 +1,5 @@
 FROM python:3.7-alpine
+LABEL maintainer="Joe Chien"
 
 WORKDIR .
 
