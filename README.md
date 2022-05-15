@@ -85,7 +85,7 @@ Once the project is up and running, you should be able to see deployments and se
 These pages should also load on your web browser:
 * `http://localhost:30000/` - Frontend ReactJS Application
 
-###Steps to test Kafka Broker to consume from items topic
+### Steps to test Kafka Broker to consume from items topic
 * a producer was implemented in the code of the locations api to produce and save messages in the Kafka broker whenever you make an api endpoint call /locations.
 * a consumer was also implemented to consume data from kafka and save it to location db, hint, Errors could happed due to dummy data primary key, keep on requesting till you pass to the right auto generated location_id primary key.
 * first you need to run kafka-zookeeper kubectl port-forward kafka-zookeeper-0 2181:2181 Start port-forwarding kafka-zookeeper first and run kafka by port-forwarding kubectl port-forward kafka-0 9092:9092
