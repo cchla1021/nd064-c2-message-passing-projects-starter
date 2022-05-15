@@ -46,7 +46,7 @@ class LocationService:
         for message in kafka_consumer:
             new_message = message. value
             new_location = Location()
-            new location.person_id = new_message['person_id']
+            new_location.person_id = new_message['person_id']
             new_location.coordinate = ST_Point(location["latitude"], location["longitude"])
             db.session.add(new_location)
             db.session.commit()
