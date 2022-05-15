@@ -1,4 +1,4 @@
-from flask import Flask, jsonify,g
+from flask import Flask, jsonify, g
 from flask_cors import CORS
 from flask_restx import Api
 from flask_sqlalchemy import SQLAlchemy
@@ -28,6 +28,8 @@ def create_app(env=None):
 
         g.kafka_producer = producer
         g.kafka_consumer = consumer
+
+
     @app.route("/health")
     def health():
         return jsonify("healthy")
