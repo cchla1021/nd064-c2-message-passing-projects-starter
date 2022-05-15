@@ -31,7 +31,7 @@ spec:
         service: grpc-persons
     spec:
       containers:
-      - image: barhome/grpc-persons:latest
+      - image: cchla1021/grpc-persons:latest
         name: grpc-persons
         imagePullPolicy: Always
       restartPolicy: Always
