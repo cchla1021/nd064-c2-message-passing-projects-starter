@@ -12,7 +12,7 @@
 * [Vagrant](https://www.vagrantup.com/) - Tool for managing virtual deployed environments
 * [VirtualBox](https://www.virtualbox.org/) - Hypervisor allowing you to run multiple operating systems
 * [K3s](https://k3s.io/) - Lightweight distribution of K8s to easily develop against a local cluster
-* [Apatche-Kafka](https://kafka.apache.org/) - Apache Kafka is an open-source distributed event streaming platform used by thousands of companies for high-performance data pipelines, streaming analytics, data integration, and mission-critical applications.
+* [Apache-Kafka](https://kafka.apache.org/) - Apache Kafka is an open-source distributed event streaming platform used by thousands of companies for high-performance data pipelines, streaming analytics, data integration, and mission-critical applications.
 * [gRPC](https://grpc.io/) - gRPC is a modern open source high performance Remote Procedure Call (RPC) framework that can run in any environment. 
 
 ## Running the app
