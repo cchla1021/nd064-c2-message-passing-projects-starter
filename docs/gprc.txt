@@ -1,8 +1,40 @@
-- run `kubectl get pods` to get grpc-persons pod name ex: pod name will be
-  something like that 'udaconnect-grpc-persons-77859449d9-2qz2d'
-  
-- run `kubectl exec -it {{grpc-persons-pod-name}} sh` to get inside the container running on the pod.
+- Copy the following command to get into the pod container.
+  kubectl exec -it $(kubectl get pods | grep -i "" | awk '{print $1}')
 
-- inside the container ther grpcserver.py is already running as per the instruction in dockerfile
+- gRPC server main already running and run the following command to validate data retrieval from grpc server
+  python app/getter.py
 
-- run `python app/grpcgetter.py` that will make a request to grpcserver and you will receive a response.
+
+- You shall see the following output:
+
+  	Retrieving persons data...
+	persons {
+	  id: 5
+	  first_name: "Taco"
+	  last_name: "Fargo"
+	  company_name: "Alpha Omega Upholstery"
+	}
+	persons {
+	  id: 6
+	  first_name: "Frank"
+	  last_name: "Shader"
+	  company_name: "USDA"
+	}
+	persons {
+	  id: 1
+	  first_name: "Pam"
+	  last_name: "Trexler"
+	  company_name: "Hampton, Hampton and McQuill"
+	}
+	persons {
+	  id: 8
+	  first_name: "Paul"
+	  last_name: "Badman"
+	  company_name: "Paul Badman & Associates"
+	}
+	persons {
+	  id: 9
+	  first_name: "Otto"
+	  last_name: "Spring"
+	  company_name: "The Chicken Sisters Restaurant"
+	}
