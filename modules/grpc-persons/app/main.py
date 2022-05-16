@@ -29,7 +29,7 @@ class PersonServicer(person_pb2_grpc.PersonServiceServicer):
         result = person_pb2.PersonMessageList()
         result.persons.extend(allpersons)
 
-        print('grpcserver succeded in delivering the request')
+        print('gRPC server request successful')
         return result
 
 

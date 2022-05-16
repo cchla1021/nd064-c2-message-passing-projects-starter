@@ -7,14 +7,15 @@ message PersonMessage {
   string company_name = 4;
 }
 
+message Empty {
+
+}
+
 message PersonMessageList{
     repeated PersonMessage persons = 1;
 }
 
-message Empty {
-}
-
-
 service PersonService {
+    rpc Create(PersonMessage) returns (PersonMessage);
     rpc Get(Empty) returns (PersonMessageList);
 }

@@ -4,7 +4,7 @@ import person_pb2_grpc
 
 
 
-print("Sending sample payload...")
+print("Retrieving persons data...")
 
 channel = grpc.insecure_channel("localhost:5005")
 stub = person_pb2_grpc.PersonServiceStub(channel)

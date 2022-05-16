@@ -14,6 +14,11 @@ class PersonServiceStub(object):
         Args:
             channel: A grpc.Channel.
         """
+        self.Create = channel.unary_unary(
+                '/PersonService/Create',
+                request_serializer=person__pb2.PersonMessage.SerializeToString,
+                response_deserializer=person__pb2.PersonMessage.FromString,
+                )
         self.Get = channel.unary_unary(
                 '/PersonService/Get',
                 request_serializer=person__pb2.Empty.SerializeToString,
@@ -24,6 +29,12 @@ class PersonServiceStub(object):
 class PersonServiceServicer(object):
     """Missing associated documentation comment in .proto file."""
 
+    def Create(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def Get(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -33,6 +44,11 @@ class PersonServiceServicer(object):
 
 def add_PersonServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
+            'Create': grpc.unary_unary_rpc_method_handler(
+                    servicer.Create,
+                    request_deserializer=person__pb2.PersonMessage.FromString,
+                    response_serializer=person__pb2.PersonMessage.SerializeToString,
+            ),
             'Get': grpc.unary_unary_rpc_method_handler(
                     servicer.Get,
                     request_deserializer=person__pb2.Empty.FromString,
@@ -47,6 +63,23 @@ def add_PersonServiceServicer_to_server(servicer, server):
  # This class is part of an EXPERIMENTAL API.
 class PersonService(object):
     """Missing associated documentation comment in .proto file."""
+
+    @staticmethod
+    def Create(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/PersonService/Create',
+            person__pb2.PersonMessage.SerializeToString,
+            person__pb2.PersonMessage.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Get(request,
