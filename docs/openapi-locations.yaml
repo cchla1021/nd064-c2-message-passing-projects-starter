@@ -1,7 +1,7 @@
 openapi: 3.0.0
 info:
-  title: Api for locations
-  description: dealing with locations
+  title: API for locations
+  description: Obtain Locations
   version: latest
 servers:
   -  description: Location API for udaconnect project
@@ -9,13 +9,13 @@ servers:
 paths:
   /api-locations/locations/{location_id}:
     get:
-      summary: Retrieve one location
-      description: Retrieve  location using location id
+      summary: Retrieve a location
+      description: Retrive location filtered by location id
       operationId: retreive
       parameters:
         - name: location_id
           in: path
-          description: location id value that need to be considered for filter
+          description: location_id - Unique ID for a given Location
           required: true
           schema:
             type: integer
