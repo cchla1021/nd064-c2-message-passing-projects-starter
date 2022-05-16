@@ -80,9 +80,12 @@ Run shell script `./delete-pod.sh` to delete udaconnect pod
 Note: The first time you run this project, you will need to seed the database with dummy data. Use the command `sh scripts/run_db_command.sh $(kubectl get pods | grep -i "postgres" | awk '{print $1}')`.  Subsequent runs of `kubectl apply` for making changes to deployments or services shouldn't require you to seed the database again!
 
 ### Verifying it Works
-Once the project is up and running, you should be able to see deployments and services in Kubernetes: kubectl get pods and kubectl get services - should both return udaconnect-app, api-persons, api-locations , grpc-persons, api-persons, kafka-0 , kafka-zookeeper and postgres
+Once the project is up and running, you should be able to see  deployments and  services in Kubernetes:
+`kubectl get pods` and `kubectl get services` - should both return 
+![pods](https://github.com/cchla1021/nd064-c2-message-passing-projects-starter/blob/main/docs/pods_screenshot.PNG)
+![pods](https://github.com/cchla1021/nd064-c2-message-passing-projects-starter/blob/main/docs/services_screenshot.PNG)
 
-These pages should also load on your web browser:
+
 * `http://localhost:30000/` - Frontend ReactJS Application
 
 ### Steps to test Kafka Broker to consume from items topic
