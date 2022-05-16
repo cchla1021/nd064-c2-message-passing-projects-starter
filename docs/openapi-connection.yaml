@@ -4,7 +4,7 @@ info:
   title: 'Connection endpoints Api '
   description: This  API retrieve all connections for a person
 servers:
-  -  description: Person API for udaconnect project
+  -  description: Connection API for udaconnect project
      url: http://localhost:30004/
 paths:
  /api-connection/persons/{personId}/connection:
@@ -15,27 +15,27 @@ paths:
       parameters:
       - name: personId
         in: path
-        description:  ID of the person to get near by connections
+        description:  Unique Person ID
         required: true
         schema:
           type: integer
       - name: start_date
         in: query
-        description:  start date of visit should be combined with 'end_date'
+        description:  Enter start date
         required: true
         schema:
           type: string
           format: date   
       - name: end_date
         in: query
-        description:  end date of visit should be combined with 'start_date'
+        description:  Enter end date
         required: true
         schema:
           type: string
           format: date
       - name: distance
         in: query
-        description:  how far is the distance between the person location and his connections 
+        description:  Distance - Proximity to a given user in meters 
         required: true
         schema:
           type: integer
