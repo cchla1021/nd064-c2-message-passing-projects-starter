@@ -1,0 +1,105 @@
+---
+openapi: 3.0.0
+info:
+  version: '1.0'
+  title: 'Person endpoints Api '
+  description: This is Person  API for udacity udaconnect project
+
+servers:
+  # Added by API Auto Mocking Plugin
+  -  description: Person API for udaconnect project
+     url: http://localhost:30002/
+paths:
+ /api-persons/persons:
+   get:
+    description: Gets the information for all persons
+    responses:
+     "200":
+      description: 'List of person information successfully retrieved '
+      content: 
+       application/json:
+         schema:
+           type: array
+           items: 
+            $ref: '#/components/schemas/Person'
+     "400":
+         description: 'Invalid input, object invalid'
+            
+ /api-persons/persons/{personId}:
+    get:
+      summary: gets person information by id
+      description: |
+        Gets person information by id
+      parameters:
+      - name: personId
+        in: path
+        description:  ID of the person to get
+        required: true
+        schema:
+          type: integer
+      responses:
+        "200":
+          description: search results matching criteria
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Person_Without_Id'
+ /api-persons/persons/:                
+    post:
+      summary: Adds a Person
+      description: Creates a person in the database.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Person'
+        description: Computer order that was created
+      responses:
+        '200':
+          description: Person created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Person'
+        '404':
+          description: 'Bad Request Invalid input, object invalid'
+components:
+  schemas:
+    Person:
+      required:
+      - company_name
+      - first_name
+      - id
+      - last_name
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 1
+        first_name:
+          type: string
+          example: Ayman
+        last_name:
+          type: string
+          example: Moawad
+        company_name:
+          type: string
+          example: Banque DU Caire
+    Person_Without_Id:
+      required:
+      - company_name
+      - first_name
+      - last_name
+      type: object
+      properties:
+        first_name:
+          type: string
+          example: Ayman
+        last_name:
+          type: string
+          example: Moawad
+        company_name:
+          type: string
+          example: Banque DU Caire
