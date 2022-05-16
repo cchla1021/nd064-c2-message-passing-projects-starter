@@ -82,9 +82,9 @@ Note: The first time you run this project, you will need to seed the database wi
 ### Verifying it Works
 Once the project is up and running, you should be able to see  deployments and  services in Kubernetes:
 `kubectl get pods` and `kubectl get services` - should both return 
+
 ![pods](https://github.com/cchla1021/nd064-c2-message-passing-projects-starter/blob/main/docs/pods_screenshot.PNG)
 ![pods](https://github.com/cchla1021/nd064-c2-message-passing-projects-starter/blob/main/docs/services_screenshot.PNG)
-
 
 * `http://localhost:30000/` - Frontend ReactJS Application
 
