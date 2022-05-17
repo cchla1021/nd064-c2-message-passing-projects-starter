@@ -1,0 +1,38 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    service: location-producer-api
+  name: location-producer
+spec:
+  ports:
+  - name: "5005"
+    port: 5005
+    targetPort: 5005
+    nodePort: 30007
+  selector:
+    service: location-producer-api
+  type: NodePort
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    service: location-producer-api
+  name: location-producer-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      service: location-producer-api
+  template:
+    metadata:
+      labels:
+        service: location-producer-api
+    spec:
+      containers:
+      - image: cchla1021/location-producer-api:latest
+        name: location-producer-api
+        imagePullPolicy: Always
+        
+      restartPolicy: Always
