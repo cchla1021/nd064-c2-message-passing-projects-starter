@@ -2,4 +2,5 @@
 I use gRPC for microrserver message passing because quick response, request time, and popular message passing for microservice. 
 For frontend, I still keep REST as most external clients know how to communicate with HTTP RESTful service.
 Kafka is a special type of message queue that is often used to handle large volumes of data generated continuously as events.
-Large volume of location data will be generated from each event attendees mobile devices, therefore, Kafka shoule be good fit for this application. 
+Due to a lot of users mobile devices will push their current locations data to location route, therefore, gRPC is used because REST will not be able to handle large volume of data and may causing delay even timeout.
+gRPC server will be implemented in the location route as a producer because quick response/request time and recommended use with microservice application. Location service will be kafka consumer.
