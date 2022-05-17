@@ -49,15 +49,6 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v2
         with:
-          context: ./modules/api-locations
-          file: ./modules/api-locations/Dockerfile
-          platforms: linux/amd64
-          push: true
-          tags: cchla1021/api-locations:latest
-      -
-        name: Build and push
-        uses: docker/build-push-action@v2
-        with:
           context: ./modules/api-connection
           file: ./modules/api-connection/Dockerfile
           platforms: linux/amd64
