@@ -58,15 +58,6 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v2
         with:
-          context: ./modules/grpc-persons
-          file: ./modules/grpc-persons/Dockerfile
-          platforms: linux/amd64
-          push: true
-          tags: cchla1021/grpc-persons:latest
-      -
-        name: Build and push
-        uses: docker/build-push-action@v2
-        with:
           context: ./modules/api-locations-producer
           file: ./modules/api-locations-producer/Dockerfile
           platforms: linux/amd64
