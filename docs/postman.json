@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "7b1c6402-9c12-4fdf-b945-99b8e68a3aaa",
+		"_postman_id": "7b003876-3995-4a8d-a008-1346db75853f",
 		"name": "Udaconnect-PostmanLib",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -20,26 +20,6 @@
 					"path": [
 						"api-persons",
 						"persons"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "locations",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:30003/api-locations/locations",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "30003",
-					"path": [
-						"api-locations",
-						"locations"
 					]
 				}
 			},
@@ -127,27 +107,6 @@
 							"key": "distance",
 							"value": "5"
 						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "locations_id",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:30003/api-locations/locations/29",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "30003",
-					"path": [
-						"api-locations",
-						"locations",
-						"29"
 					]
 				}
 			},
