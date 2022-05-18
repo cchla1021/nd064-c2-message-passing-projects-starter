@@ -56,27 +56,6 @@
 			"response": []
 		},
 		{
-			"name": "persons_id",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:30002/api-persons/persons/2",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "30002",
-					"path": [
-						"api-persons",
-						"persons",
-						"2"
-					]
-				}
-			},
-			"response": []
-		},
-		{
 			"name": "connection",
 			"request": {
 				"method": "GET",
