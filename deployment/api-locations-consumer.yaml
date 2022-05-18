@@ -2,8 +2,8 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    service: api-location-consumer
-  name: api-location-consumer
+    service: api-locations-consumer
+  name: locations-consumer
 spec:
   ports:
   - name: "5005"
@@ -11,28 +11,28 @@ spec:
     targetPort: 5005
     nodePort: 30010
   selector:
-    service: api-location-consumer
+    service: api-locations-consumer
   type: NodePort
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    service: api-location-consumer
-  name: api-location-consumer
+    service: api-locations-consumer
+  name: api-locations-consumer
 spec:
   replicas: 1
   selector:
     matchLabels:
-      service: api-location-consumer
+      service: api-locations-consumer
   template:
     metadata:
       labels:
-        service: api-location-consumer
+        service: api-locations-consumer
     spec:
       containers:
-      - image: cchla1021/api-location-consumer:latest
-        name: api-location-consumer
+      - image: cchla1021/api-locations-consumer:latest
+        name: api-locations-consumer
         imagePullPolicy: Always
         env:
         - name: DB_USERNAME

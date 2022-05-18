@@ -2,8 +2,8 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    service: api-location-producer
-  name: api-location-producer
+    service: api-locations-producer
+  name: locations-producer
 spec:
   ports:
   - name: "5005"
@@ -11,28 +11,28 @@ spec:
     targetPort: 5005
     nodePort: 30007
   selector:
-    service: api-location-producer
+    service: api-locations-producer
   type: NodePort
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    service: api-location-producer
-  name: api-location-producer
+    service: api-locations-producer
+  name: api-locations-producer
 spec:
   replicas: 1
   selector:
     matchLabels:
-      service: api-location-producer
+      service: api-locations-producer
   template:
     metadata:
       labels:
-        service: api-location-producer
+        service: api-locations-producer
     spec:
       containers:
-      - image: cchla1021/api-location-producer:latest
-        name: api-location-producer
+      - image: cchla1021/api-locations-producer:latest
+        name: api-locations-producer
         imagePullPolicy: Always
         
       restartPolicy: Always
