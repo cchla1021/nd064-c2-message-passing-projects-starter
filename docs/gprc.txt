@@ -1,40 +1,5 @@
 - Copy the following command to get into the pod container.
-  kubectl exec -it $(kubectl get pods | grep -i "" | awk '{print $1}')
+  kubectl exec -it $(kubectl get pods | grep -i "api-locations-producer*" | awk '{print $1}') -- bash
 
-- gRPC server main already running and run the following command to validate data retrieval from grpc server
+- gRPC server main already running and run the following command test gRPC Client
   python app/getter.py
-
-
-- You shall see the following output:
-
-  	Retrieving persons data...
-	persons {
-	  id: 5
-	  first_name: "Taco"
-	  last_name: "Fargo"
-	  company_name: "Alpha Omega Upholstery"
-	}
-	persons {
-	  id: 6
-	  first_name: "Frank"
-	  last_name: "Shader"
-	  company_name: "USDA"
-	}
-	persons {
-	  id: 1
-	  first_name: "Pam"
-	  last_name: "Trexler"
-	  company_name: "Hampton, Hampton and McQuill"
-	}
-	persons {
-	  id: 8
-	  first_name: "Paul"
-	  last_name: "Badman"
-	  company_name: "Paul Badman & Associates"
-	}
-	persons {
-	  id: 9
-	  first_name: "Otto"
-	  last_name: "Spring"
-	  company_name: "The Chicken Sisters Restaurant"
-	}
